@@ -19,7 +19,32 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
-
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(221, 219, 219);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+@keyframes slide {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+.gray-animation {
+  background: linear-gradient(90deg, rgba(200, 200, 200, 0.5), rgba(255, 255, 255, 0) 50%, rgba(200, 200, 200, 0.5));
+  background-size: 200% 100%;
+  animation: slide 1.5s linear infinite;
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -53,4 +78,59 @@ body {
   }
 }
 
-
+/* signup form css */
+.form-container {
+  width: 400px;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid grey;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px 5px #f8f8f8;
+}
+.signupform{
+  width: 100%;
+}
+.form-group {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.form-group label {
+  text-align: left;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+}
+.form-control{
+  width: 100%;
+  border: 1px solid grey;
+  height: 40px;
+  border-radius: 4px;
+  padding-left: 10px;
+  margin-top: 5px;
+  font-size: 16px;
+}
+.form-control::placeholder{
+  font-size: 13px;
+}
+.toggleimg{
+  position: absolute;
+  right:15px;
+  top: 40px;
+}
+.form-control input:focus{
+  border: 1px solid black;
+}
+.form-control input:focus-visible{
+  border: 1px solid black;
+}
+@media (max-width:576px) {
+  .form-container{
+    width: 100%;
+  }
+}

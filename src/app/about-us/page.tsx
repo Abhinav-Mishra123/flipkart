@@ -1,8 +1,12 @@
+import NextBreadcrumb from '@/components/NextBreadcrumb'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>This is about us page</div>
+    <div>
+      <NextBreadcrumb/>
+      This is about us page
+      </div>
   )
 }
 

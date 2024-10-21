@@ -1,9 +1,15 @@
-import Header from "@/components/Header";
+"use client"
+import { Hero } from "@/components/Hero";
+import Productcomponent from "@/components/Productcomponent";
+import Shimmer from "./utils/Shimmer";
 
 export default function Home() {
+  
   return (
     <div className="Homepage">
-     This is Home Page
+     <Hero/>
+     {/* <Shimmer/> */}
+     <Productcomponent/>
     </div>
   );
 }
