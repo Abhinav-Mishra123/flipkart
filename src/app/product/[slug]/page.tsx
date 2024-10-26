@@ -4,6 +4,12 @@ import dbConnect from "@/db/database";
 import ImageSlider from "@/components/ImageSlider";
 import NextBreadcrumb from "@/components/NextBreadcrumb";
 import ClientCart from "@/components/ClientCart";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "this is cart page",
+    description: "this is my description for cart page"
+}
 
 // Define the types for the Product data
 interface ProductDataType {
@@ -62,11 +68,7 @@ interface ProductDetailsProps {
 export default async function ProductDetails({ params }: ProductDetailsProps) {
     await dbConnect(); 
   const slug = params.slug;
-
-  // Fetch products from the database and cast them to ProductDataType[]
   const products = await ProductModel.find().lean() as ProductDataType[];
-
-  // Find the matching product based on the slug
   const matchedProduct = products.find(
     (product: ProductDataType) => slugify(product.product_name) === slug
   );

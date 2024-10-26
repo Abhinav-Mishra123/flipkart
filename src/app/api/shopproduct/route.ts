@@ -2,13 +2,12 @@ import dbConnect from "@/db/database";
 import { NextRequest, NextResponse } from "next/server";
 import { ProductModel } from "@/models/ShopProduct";
 
-// GET request handler to fetch product data
 export async function GET(req: NextRequest) {
-  await dbConnect(); // Ensure the database is connected
+  await dbConnect();
 
   try {
-    const products = await ProductModel.find(); // Fetch all products from the database
-    return NextResponse.json(products); // Send products as a JSON response
+    const products = await ProductModel.find();
+    return NextResponse.json(products);
   } catch (error: any) {
     console.error("Error fetching products:", error.message);
     return NextResponse.json(
