@@ -17,7 +17,7 @@ export async function GET(req: NextRequest) {
   try {
     const decoded = jwt.verify(token, JWT_SECRET) as jwt.JwtPayload; 
 
-    const { userId, email, name } = decoded; 
+    const {email, name } = decoded; 
 
     return NextResponse.json({
       message: "Authenticated",

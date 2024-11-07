@@ -1,15 +1,12 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { useCart } from "@/context/CartContext";
-import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
-import { Metadata } from "next";
 
 
 function CartPage() {
   const { cart, removeFromCart, updateQuantity, clearCart } = useCart();
   const router = useRouter();
-  const { isLoggedIn } = useAuth();
   const [amount, setAmount] = useState<number>(0);
 
   useEffect(() => {

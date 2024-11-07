@@ -6,7 +6,7 @@ import jwt from 'jsonwebtoken';
 
 const JWT_SECRET = process.env.JWT_SECRET || "your-secret-key";
 
-export async function POST(req: NextRequest, res: NextResponse) {
+export async function POST(req: NextRequest, _res: NextResponse) {
   await dbConnect(); 
   try {
     const reqBody = await req.json();

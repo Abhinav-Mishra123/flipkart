@@ -1,7 +1,7 @@
 import dbConnect from '@/db/database';
 import Title from '../../../models/Title';
 
-export async function GET(req: Request) {
+export async function GET(_req: Request) {
     await dbConnect();
     try {
         const titles = await Title.find(); // Fetch titles from the database

@@ -2,7 +2,7 @@ import dbConnect from "@/db/database";
 import { NextRequest, NextResponse } from "next/server";
 import { ProductModel } from "@/models/ShopProduct";
 
-export async function GET(req: NextRequest) {
+export async function GET(_req: NextRequest) {
   await dbConnect();
 
   try {

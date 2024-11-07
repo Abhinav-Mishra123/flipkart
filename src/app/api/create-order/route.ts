@@ -1,10 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import Razorpay from "razorpay";
 
-interface razorpayType {
-    key_id:string,
-    key_secret:string
-} 
 
 const razorpay = new Razorpay({
   key_id: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
